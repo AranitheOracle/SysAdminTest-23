@@ -10,10 +10,11 @@ At first let's go through the each website on by one.
 After opening the github page , we can see that it is a basic html-css-js based website which was also mentioned in the task.
 I took some help from this video from **freecodecamp** (https://youtu.be/Wf2eSG3owoA?si=HStbjamGQYug83Fi).
 For hosting this I used the `nginx:latest` as base image to build.   
-Then I created a *Dockerfile* with the following contents :---[DockerFile1](Challenge 3/Dockerfile)
+Then I created a *Dockerfile* with the following contents :---[DockerFile1](Challenge3/Dockerfile1)
 ~~~
 FROM nginx:latest
 ADD . /usr/share/nginx/html
 ~~~
 I built an image named website using `docker build --tag website:latest` . 
 Finally I ran the image to host the website using `docker run --name SAIC -d -p 9000:80 website:latest .`
+
