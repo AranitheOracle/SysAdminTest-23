@@ -1,3 +1,0 @@
-In this problem we need to deploy two websites using Docker containers.
-Also the problem tells us Backup a volume mapped data as a zip file.
-
