@@ -8,7 +8,7 @@ At first let's go through the each website on by one.
 ### [SAIC-website](https://github.com/KamandPrompt/SAIC-Website)
 
 After opening the github page , we can see that it is a basic html-css-js based website which was also mentioned in the task.
-I took some help from this video from `***freecodecamp*** https://youtu.be/Wf2eSG3owoA?si=HStbjamGQYug83Fi`
+I took some help from this video from **freecodecamp** `https://youtu.be/Wf2eSG3owoA?si=HStbjamGQYug83Fi`
 For hosting this I used the `nginx:latest` as base image to build.   
 Then I created a *Dockerfile* with the following contents :---
 ~~~
