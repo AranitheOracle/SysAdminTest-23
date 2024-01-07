@@ -26,7 +26,7 @@ Then taking information from this: (https://earthly.dev/blog/rails-with-docker/)
 
 I used the below as the initial Dockerfile:
 ~~~
-FROM ruby:2.5.9-alpine
+FROM ruby:alpine3.19
   RUN apk add \
     build-base \
     postgresql-dev \
@@ -40,3 +40,4 @@ FROM ruby:2.5.9-alpine
   EXPOSE 3000
   CMD ["rails", "server", "-b", "0.0.0.0"]
 ~~~
+After running `docker build --tag webs:latest` it threw errors. Basically because of the version dependencies. I made some changes to make the above code run. All efforts were in vain[Error](Screenshots/error.png)
