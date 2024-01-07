@@ -18,3 +18,25 @@ ADD . /usr/share/nginx/html
 I built an image named website using `docker build --tag website:latest` . 
 Finally I ran the image to host the website using `docker run --name SAIC -d -p 9000:80 website:latest .`
 
+### [Github Languages](https://github.com/alex-benoit/github-languages.git)
+
+This website is based on Ruby-on-Rails.
+So I need to built a image using `ruby` as the base image. I google how to do it and went through a lot of articles and websites.
+Then taking information from this: (https://earthly.dev/blog/rails-with-docker/) I tried to built an image based on  `ruby:alpine`.
+
+I used the below as the first Dockerfile:
+~~~
+FROM ruby:2.5.9-alpine
+  RUN apk add \
+    build-base \
+    postgresql-dev \
+    tzdata \
+    nodejs
+  
+  WORKDIR /app
+  COPY Gemfile* .
+  RUN bundle install
+  COPY . .
+  EXPOSE 3000
+  CMD ["rails", "server", "-b", "0.0.0.0"]
+~~~
