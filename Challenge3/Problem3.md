@@ -24,7 +24,7 @@ This website is based on Ruby-on-Rails.
 So I need to built a image using `ruby` as the base image. I google how to do it and went through a lot of articles and websites.
 Then taking information from this: (https://earthly.dev/blog/rails-with-docker/) I tried to built an image based on  `ruby:alpine`.
 
-I used the below as the first Dockerfile:
+I used the below as the initial Dockerfile:
 ~~~
 FROM ruby:2.5.9-alpine
   RUN apk add \
