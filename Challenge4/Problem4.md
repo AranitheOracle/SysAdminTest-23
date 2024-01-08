@@ -2,6 +2,8 @@
 
 ## Challenge 4 - Docker & Networking
 
+#### PART-1
+
 Here we are tasked to pull an image from [**Docker Hub**](https://hub.docker.com/search?q=). Then we need to balance the load between multiple instances of the same image.
 
 For the first part code is very basic. Just some known Docker commands like `pull` and `run` are used as you can see below.
@@ -16,7 +18,16 @@ sleep 3
 echo "Enter the number of instances of the image you want to create : "
 read num
 for ((i=1; i<=$num; i++)); do
-    docker run -d --name instance${i} --network my_network -p 808$i:3000 $img_id
+    docker run -d --name instance${i} -p 808$i:3000 $img_id
 done
 ~~~
 The [demonstration](Screenshots/part1demonstration.png) and the [script](part1initial.sh) are attached.
+
+#### PART-2
+
+For the load-balcing purpose I used **_nginx_**. For this the help I took are listed as below :-
+>1. https://youtu.be/v81CzSeiQjo?si=gy-ty-7VM-Mn3v2B
+>2. https://youtu.be/42Q65H8ch7U?si=lmhVZyvzCanlqDNP
+>3. https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
+
+After all the efforts and pain I was able to set-up a _sasta_ load balancer. I created a Dockerfile and docker-compose file with all the required stuff. Then nginx.conf was the last step left for this. All the files required are attached : [Dockerfile]() , [docker-compose.yml](), [nginx.conf](). 
