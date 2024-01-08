@@ -15,3 +15,4 @@ Now it was time for the monitoring part. Intitially I thought of shell scripting
 
 Then I was googling stuff about dockers and came to knwo we can code about dockers in **Python**. Just need to run `pip install docker` to install the docker module. One more search led to me to: (https://github.com/docker/docker-py/tree/main
 ) which eventually led me to: (https://docker-py.readthedocs.io/en/stable/containers.html). Then little more surfing and scratching for details helped me gather all the information required to learn about the different fucntions of this module and similarity to the docker commands. 
+
