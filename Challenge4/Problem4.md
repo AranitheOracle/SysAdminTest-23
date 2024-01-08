@@ -30,4 +30,4 @@ For the load-balcing purpose I used **_nginx_**. For this the help I took are li
 >2. https://youtu.be/42Q65H8ch7U?si=lmhVZyvzCanlqDNP
 >3. https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 
-After all the efforts and pain I was able to set-up a _sasta_ load balancer. I created a Dockerfile and docker-compose file with all the required stuff. Then nginx.conf was the last step left for this. All the files required are attached : [Dockerfile]() , [docker-compose.yml](), [nginx.conf](). 
+After all the efforts and pain I was able to set-up a _sasta_ load balancer. I created a Dockerfile and docker-compose file with all the required stuff. Then nginx.conf was the last step left for this. All the files required are attached : [Dockerfile](Dockerfile) , [docker-compose.yml](docker-compose.yml), [nginx.conf](nginx.conf). The directory structure msut look like this: [Directory Structure]() 
