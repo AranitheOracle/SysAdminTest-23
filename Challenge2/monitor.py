@@ -26,4 +26,4 @@ while True:
             body+=f"{container.name} of {container.image.tags[0]} has been removed. \n"
             auto(subject,body)
 
-        time.sleep(60)
+        time.sleep(100)
