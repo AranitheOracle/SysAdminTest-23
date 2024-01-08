@@ -31,3 +31,4 @@ Here I first imported the function I created for email-automation. Wrote the bas
 
 For scheduling purposes I used the ***time*** module of **python**. I created a pause by using `time.sleep(100)` so that the code runs every 100 seconds and monitor the changes in the docker containers. As a change is detected email will be succesfully sent.
 
+[Demonstration](Screenshots/demonstration.jpg) of email being received when container status changes.
