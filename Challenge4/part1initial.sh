@@ -7,5 +7,5 @@ sleep 3
 echo "Enter the number of instances of the image you want to create : "
 read num
 for ((i=1; i<=$num; i++)); do
-    docker run -d --name instance${i} --network my_network -p 808$i:3000 $img_id
+    docker run -d --name instance${i} -p 808$i:3000 $img_id
 done

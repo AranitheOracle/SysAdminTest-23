@@ -2,9 +2,10 @@
 
 ## Challenge 4 - Docker & Networking
 
-#### PART-1
-
 Here we are tasked to pull an image from [**Docker Hub**](https://hub.docker.com/search?q=). Then we need to balance the load between multiple instances of the same image.
+
+
+#### PART-1
 
 For the first part code is very basic. Just some known Docker commands like `pull` and `run` are used as you can see below.
 For this I used [this image (lightweight)](https://hub.docker.com/r/metavinayak/matrix) .
@@ -36,3 +37,4 @@ The [demonstration]() of the load-balancer is attached. For this I used [this im
 
 #### PART-3
 
+For this I was thinking of creating a architecture in which each instance will have it's own access.log and error.log. In this way we will have isolated logs so that it's easier to identify any kind of issue.ALso better organization is a plus point. The default one's are usually simpler and face diffulty in multiple instances.
