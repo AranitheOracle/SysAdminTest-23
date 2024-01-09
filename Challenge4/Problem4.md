@@ -33,7 +33,7 @@ For the load-balcing purpose I used **_nginx_**. For this the help I took are li
 
 After all the efforts and pain I was able to set-up a _sasta_ load balancer. I created a Dockerfile and docker-compose file with all the required stuff. Then nginx.conf was the last step left for this. All the files required are attached : [Dockerfile](Dockerfile) , [docker-compose.yml](docker-compose.yml), [nginx.conf](nginx.conf). The directory structure must look like this: [Directory Structure](Screenshots/folders.png). Then `docker-compose up --build -d` to build the instances and test the load-balancing. The load-balancer is a complete mess and is not optimized  :sweat_smile:  .
 
-The [demonstration]() of the load-balancer is attached. For this I used [this image (lightweight)](https://hub.docker.com/r/metavinayak/matrix) .
+The [demonstration](Screenshots/Loadbalancingdemonstration.mp4) of the load-balancer is attached. For this I used [this image (lightweight)](https://hub.docker.com/r/metavinayak/matrix) .
 
 #### PART-3
 
