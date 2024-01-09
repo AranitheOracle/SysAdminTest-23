@@ -47,4 +47,40 @@ FROM ruby:alpine3.19
 
 After running `docker build --tag webs:latest` it threw errors. Basically because of the version dependencies. I made some changes to make the above code run. All efforts were in vain[Error](Screenshots/error.png). After more of googling I found this: (<https://github.com/shettigarc/rails-on-docker>).
 
-There I found a youtube link: (<https://youtu.be/a-jcTib9ZPA>) which helped me to create a new Dockerfile.
+There I found a youtube link: (<https://youtu.be/a-jcTib9ZPA>) which helped me to create a new Dockerfile. I also made a docker-compose file and made changes to database.yml as per needs. But it also failed. Then I noticed the database used her is **postgresql**. Then I went to find this video: (https://youtu.be/dF6VQOZPZBM?si=d1k8iirTlrCiziMw).  But still failed. :(
+
+### PART 2
+
+So here we need to backup a volume mapped data as a zip file to a folder of my choice everyday at 11:55 pm. For this I visited a few sites like : (https://docs.docker.com/storage/volumes/#back-up-restore-or-migrate-data-volumes),  (https://stackoverflow.com/questions/26331651/how-can-i-backup-a-docker-container-with-its-data-volumes),  (https://www.docker.com/blog/back-up-and-share-docker-volumes-with-this-extension/). The [backup script](backup.sh) kind of should look like below:
+
+~~~
+#!/bin/bash
+source="pathtothevolumedata"
+location="pathtobackuplocation"
+cd "$source"
+zip -r "$location/backup.zip"
+~~~
+
+*source* mentioned above is generally /var/lib/docker/volume on **Linux** but you can get the location by `docker inspect name_of_container` and then under **"Mounts"** section you can see written as **"Source:"**. 
+
+For the timer part we can create a cron job in [another script](start.sh) so that when the script runs it will execute the backup script
+at 11:55 pm. 
+
+~~~
+#!/bin/bash
+#write out current crontab
+crontab -l > mycron
+#echo new cron into cron file
+echo "55 23 * * * cd locationtothebackupscript; ./backup.sh" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
+~~~
+
+Help : (https://stackoverflow.com/questions/878600/how-to-create-a-cron-job-using-bash-automatically-without-the-interactive-editor)
+
+I hope it runs  :sweat_smile:  :sweat_smile:  :sweat_smile:
+
+### PART3
+
+The network type for [SAIC-website](https://github.com/KamandPrompt/SAIC-Website) will be a bridge network. I guess it is because it has a default and easy setup. The bridge network allows you to map container ports to host ports. 
