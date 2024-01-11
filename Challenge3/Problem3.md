@@ -13,7 +13,7 @@ I took some help from this video from **freecodecamp** (<https://youtu.be/Wf2eSG
 For hosting this I used the `nginx:latest` as the base image to build.
 Then I created a *Dockerfile* with the following contents :---[DockerFile1](Dockerfile1)
 
-~~~
+~~~Dockerfile
 FROM nginx:latest
 ADD . /usr/share/nginx/html
 ~~~
@@ -29,7 +29,7 @@ Then taking information from this: (<https://earthly.dev/blog/rails-with-docker/
 
 I used the below as the initial Dockerfile:
 
-~~~
+~~~Dockerfile
 FROM ruby:alpine3.19
   RUN apk add \
     build-base \
@@ -53,7 +53,7 @@ There I found a YouTube link: (<https://youtu.be/a-jcTib9ZPA>) which helped me t
 
 So here we need to back up a volume mapped data as a zip file to a folder of my choice every day at 11:55 pm. For this I visited a few sites like : (https://docs.docker.com/storage/volumes/#back-up-restore-or-migrate-data-volumes),  (https://stackoverflow.com/questions/26331651/how-can-i-backup-a-docker-container-with-its-data-volumes),  (https://www.docker.com/blog/back-up-and-share-docker-volumes-with-this-extension/). The [backup script](backup.sh) kind of should look like below:
 
-~~~
+~~~bash
 #!/bin/bash
 source="pathtothevolumedata"
 location="pathtobackuplocation"
@@ -66,7 +66,7 @@ zip -r "$location/backup.zip"
 For the timer part, we can create a cron job in [another script](start.sh) so that when the script runs it will execute the backup script
 at 11:55 pm. 
 
-~~~
+~~~bash
 #!/bin/bash
 #write out current crontab
 crontab -l > mycron

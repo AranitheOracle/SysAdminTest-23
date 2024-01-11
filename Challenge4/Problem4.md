@@ -9,7 +9,7 @@ Here we are tasked to pull an image from [**Docker Hub**](https://hub.docker.com
 
 For the first part, code is fundamental. Just some known Docker commands like `pull` and `run` are used as you can see below.
 For this, I used [this image (lightweight)](https://hub.docker.com/r/metavinayak/matrix) .
-~~~
+~~~bash
 #!/bin/bash
 img_id="d8e1f39c17d0"
 echo "Let's pull the image first"
