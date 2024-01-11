@@ -33,3 +33,4 @@ In the above code we can just add a for loop to loop over the assignments and ch
 Then more of googling helped me to find website scraping using Python. Websites like (https://discuss.python.org/t/login-to-a-website-for-scraping/16862/2) , (https://www.geeksforgeeks.org/python-web-scraping-tutorial/) , (https://www.zenrows.com/blog/web-scraping-login-python#waf-protected-websites) helped me to increase my knowledge. So we can use `requests` and `beautifulsoup4` libraries to get into the website and the get the required data. 
 
 Another method can be using `PyAutoGUI` . This method will be over strenous . But we can automate mouse movements and automating keyboard to atfirst login into the site then going to the specific course and then going and checking the submission details.
+<https://www.geeksforgeeks.org/gui-automation-using-python/>
