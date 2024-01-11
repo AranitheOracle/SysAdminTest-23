@@ -10,7 +10,7 @@ First of all for the email services it is already mentioned in [Challenge2/Probl
 Initially I thought of creating a python script for logging into https://lms.iitmandi.ac.in/ . So I used service of `twill` module and for that purpose took help from (https://stackoverflow.com/questions/2680185/how-to-log-in-to-a-website-using-installed-twill) ,
 (https://twill.readthedocs.io/en/latest/examples.html) . It failed. So I moved onto using the `selenium` module.
 
-~~~
+~~~python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 # create webdriver object
